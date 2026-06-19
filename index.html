@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Julia Gabrielly Azevedo" />    
     <title>Catálogo de Entretenimento</title>
 
     <style>
@@ -29,9 +30,16 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 5px;
             color: var(--InkBlack);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        p{
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--SageOlive);
+            font-size: 16px;
         }
 
         .categoria {
@@ -77,47 +85,48 @@
 <body>
 
     <h1>Catálogo</h1>
+    <p>Alguns dos meus títulos favoritos:</p>
 
     <div id="conteudo"></div>
 
     <script>
-        // Dados JSON
         const dados = {
             filmes: [
                 { nome: "Interestelar" },
-                { nome: "Clube da Luta" },
+                { nome: "O Diabo Veste Prada" },
                 { nome: "Interestelar" },
-                { nome: "Matrix" },
-                { nome: "Gladiador" },
-                { nome: "Parasita" },
-                { nome: "Avatar" },
+                { nome: "Enola Holmes" },
+                { nome: "O Jogo do Amor - ''Ódio''" },
+                { nome: "Frankenstein" },
+                { nome: "O Mundo Depois de Nós" },
                 { nome: "Titanic" },
-                { nome: "Inception" },
-                { nome: "Batman: O Cavaleiro das Trevas" }
+                { nome: "Batalhão 6888" },
+                { nome: "Não Olhe para Cima" }
             ],
             series: [
-                { nome: "Breaking Bad" },
-                { nome: "Dark" },
+                { nome: "As Telefonistas" },
+                { nome: "O Gambito da Rainha" },
                 { nome: "Stranger Things" },
                 { nome: "The Office" },
-                { nome: "The Last of Us" },
-                { nome: "House of the Dragon" },
-                { nome: "Lost" },
+                { nome: "Gossip Girl" },
+                { nome: "Gilmore Girls" },
+                { nome: "Downton Abbey" },
                 { nome: "Sherlock" },
-                { nome: "The Boys" },
-                { nome: "Peaky Blinders" }
+                { nome: "Emergência Radioativa" },
+                { nome: "Fallout" }
             ],
             livros: [
                 { nome: "Noites Brancas - F. Dostoiévski" },
                 { nome: "Crime e Castigo - F. Dostoiévski" },
-                { nome: "É assim que acaba - Colleen Hoover" },
+                { nome: "É Assim que Acaba - Colleen Hoover" },
+                { nome: "Todas as suas (im)perfeições - Colleen Hoover" },
+                { nome: "As mil partes do meu coração - Colleen Hoover" },
                 { nome: "A Empregada - Freida McFadden" },
-                { nome: "A Revolução dos Bichosm" },
-                { nome: "O Hobbit" },
-                { nome: "Crime e Castigo" },
-                { nome: "Duna" },
-                { nome: "O Pequeno Príncipe" },
-                { nome: "Neuromancer" }
+                { nome: "Nunca minta - Freida McFadden" },
+                { nome: "A Beira da Loucura - B. A. Paris" },
+                { nome: "A Biblioteca da Meia-Noite - Matt Haig" },
+                { nome: "A paciente silenciosa - Alex Michaelides" }
+
             ]
         };
 
