@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Entretenimento</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+        --UmberBrown: #8c6046;
+        --AntiqueParchment: #f1e4cc;
+        --Rosewood: #96584e;
+        --SageOlive: #798165;
+        --InkBlack: #2c2725;
+      }
+
+
+        body {
+            background: var(--AntiqueParchment);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--InkBlack);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .categoria {
+            margin-bottom: 40px;
+        }
+
+        .categoria h2 {
+            margin-bottom: 15px;
+            color: var(--InkBlack);
+            border-left: 5px solid var(--UmberBrown);
+            padding-left: 10px;
+        }
+
+        .lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--Rosewood);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: var(--AntiqueParchment);
+        }
+
+        .card p {
+            color: var(--AntiqueParchment);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo</h1>
+
+    <div id="conteudo"></div>
+
+    <script>
+        // Dados JSON
+        const dados = {
+            filmes: [
+                { nome: "Interestelar" },
+                { nome: "Clube da Luta" },
+                { nome: "Interestelar" },
+                { nome: "Matrix" },
+                { nome: "Gladiador" },
+                { nome: "Parasita" },
+                { nome: "Avatar" },
+                { nome: "Titanic" },
+                { nome: "Inception" },
+                { nome: "Batman: O Cavaleiro das Trevas" }
+            ],
+            series: [
+                { nome: "Breaking Bad" },
+                { nome: "Dark" },
+                { nome: "Stranger Things" },
+                { nome: "The Office" },
+                { nome: "The Last of Us" },
+                { nome: "House of the Dragon" },
+                { nome: "Lost" },
+                { nome: "Sherlock" },
+                { nome: "The Boys" },
+                { nome: "Peaky Blinders" }
+            ],
+            livros: [
+                { nome: "Noites Brancas - F. Dostoiévski" },
+                { nome: "Crime e Castigo - F. Dostoiévski" },
+                { nome: "É assim que acaba - Colleen Hoover" },
+                { nome: "A Empregada - Freida McFadden" },
+                { nome: "A Revolução dos Bichosm" },
+                { nome: "O Hobbit" },
+                { nome: "Crime e Castigo" },
+                { nome: "Duna" },
+                { nome: "O Pequeno Príncipe" },
+                { nome: "Neuromancer" }
+            ]
+        };
+
+        const container = document.getElementById("conteudo");
+
+        Object.entries(dados).forEach(([categoria, itens]) => {
+            const secao = document.createElement("section");
+            secao.className = "categoria";
+
+            secao.innerHTML = `
+                <h2>${categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2>
+                <div class="lista">
+                    ${itens.map(item => `
+                        <div class="card">
+                            <h3>${item.nome}</h3>
+                            <p>Categoria: ${categoria}</p>
+                        </div>
+                    `).join("")}
+                </div>
+            `;
+
+            container.appendChild(secao);
+        });
+    </script>
+
+</body>
+</html>
